@@ -24,7 +24,7 @@ public class FilmController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Film>> getFilms(){
-        return ResponseEntity.ok(filmRepository.findAll());
+        return ResponseEntity.ok(filmService.getAll());
     }
 
 }
