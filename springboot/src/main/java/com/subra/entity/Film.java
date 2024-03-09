@@ -1,10 +1,7 @@
 package com.subra.entity;
 
 import lombok.*;
-import org.hibernate.annotations.NotFound;
-
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name="film")
