@@ -1,0 +1,13 @@
+logging:
+  level:
+    ROOT: info
+    org.hibernate.SQL: INFO
+    fr.guillaumesubra1.clone_cinema: INFO
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cinema
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  liquibase:
+    contexts: prod

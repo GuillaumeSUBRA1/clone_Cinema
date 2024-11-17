@@ -1,0 +1,42 @@
+logging:
+  level:
+    ROOT: info
+    org.hibernate.SQL: DEBUG
+    fr.guillaumesubra1.clone_cinema: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: clone-cinema
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    contexts: dev
+    change-log: classpath:db/changelog/master.xml
+    enabled: true
+  #    drop-first: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+server:
+  port: 8080
+
+#okta:
+#  oauth2:
+#    issuer: https://dev-zyxt7lep8u3zswoz.us.auth0.com/
+#    client-id: HbfloRkStU8yaHueR250SEWKs2Edv2ap
+#    client-secret: dyfR_rB5g8BjmrWERkWHrWIzFCpmULUmQzMazsYnd_CuM3neeBftv00AuSIt2p0Z

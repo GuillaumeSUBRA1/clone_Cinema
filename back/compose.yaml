@@ -1,0 +1,8 @@
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=cinema
+      - POSTGRES_PASSWORD=cinema
+    ports:
+      - 5433:5432
