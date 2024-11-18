@@ -100,8 +100,8 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="sessions" author="guillaumesubra1">
-        <createTable tableName="sessions">
+    <changeSet id="session" author="guillaumesubra1">
+        <createTable tableName="session">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -114,9 +114,9 @@
             <column name="created" type="timestamp"/>
             <column name="last_modified" type="timestamp"/>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="sessions" constraintName="fk_session_movie_id" deferrable="false"
+        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="session" constraintName="fk_session_movie_id" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movie" validate="true"/>
-        <addForeignKeyConstraint baseColumnNames="room" baseTableName="sessions" constraintName="fk_session_room_id" deferrable="false"
+        <addForeignKeyConstraint baseColumnNames="room" baseTableName="session" constraintName="fk_session_room_id" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="room" validate="true"/>
     </changeSet>
 
@@ -133,6 +133,6 @@
             </column>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="session" baseTableName="booking" constraintName="fk_booking_session_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="sessions" validate="true"/>
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="session" validate="true"/>
     </changeSet>
 </databaseChangeLog>
