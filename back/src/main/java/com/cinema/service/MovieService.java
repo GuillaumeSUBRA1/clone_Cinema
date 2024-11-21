@@ -21,7 +21,6 @@ public class MovieService {
 
     public Page<DisplayMovieCardRecordDTO> getAll(Pageable p){
         Page<MovieEntity> page = movieRepository.findAllCoverOnly(p);
-        System.out.println("nombre de films = "+ page.getTotalElements());
         return page.map(movieMapper::entityToDisplayCardListingDTO);
     }
 
