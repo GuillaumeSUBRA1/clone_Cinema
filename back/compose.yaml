@@ -1,5 +1,5 @@
 services:
-  db:
+  database:
     image: postgres
     environment:
       - POSTGRES_USER=cinema
