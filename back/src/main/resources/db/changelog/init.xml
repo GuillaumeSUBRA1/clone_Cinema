@@ -13,9 +13,10 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(50)"/>
+            <column name="name" type="varchar(100)"/>
+            <column name="password" type="varchar(20)"/>
             <column name="email" type="varchar(100)">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
+                 <constraints unique="true" nullable="true" uniqueConstraintName="admin_email"/>
             </column>
             <column name="created" type="timestamp"/>
             <column name="last_modified" type="timestamp"/>
@@ -34,21 +35,21 @@
             <column name="admin" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="title" type="varchar(256)">
+            <column name="title" type="varchar">
                 <constraints nullable="false"/>
             </column>
-            <column name="summary" type="varchar(256)"/>
+            <column name="summary" type="varchar"/>
             <column name="duration" type="int"/>
             <column name="release" type="varchar(4)">
                 <constraints nullable="false"/>
             </column>
-            <column name="actors" type="varchar(256)">
+            <column name="actors" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="gender" type="varchar(256)">
+            <column name="gender" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="producer" type="varchar(100)"/>
+            <column name="producer" type="varchar(50)"/>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="admin" baseTableName="movie" constraintName="fk_movie_admin_id" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="admin" validate="true"/>
@@ -66,14 +67,14 @@
             <column name="movie" type="bigint">
                 <constraints  nullable="false" unique="true" />
             </column>
-            <column name="file" type="varchar(255)">
-                <constraints nullable="false"/>
+            <column name="link" type="varchar">
+                <constraints nullable="true" />
             </column>
             <column name="file_content" type="${blobType}">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
-            <column name="file_content_type" type="varchar(255)">
-                <constraints nullable="false" />
+            <column name="file_content_type" type="varchar(10)">
+                <constraints nullable="true" />
             </column>
             <column name="is_cover" type="boolean">
                 <constraints nullable="false" />
@@ -88,7 +89,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="name" type="varchar(100)">
                 <constraints nullable="false" unique="true" />
             </column>
             <column name="seats" type="int">
