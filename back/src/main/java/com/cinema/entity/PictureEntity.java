@@ -32,6 +32,6 @@ public class PictureEntity implements Serializable {
     String fileContentType;
 
     @Column(nullable = false)
-    boolean isCover;
+    Boolean isCover;
 
 }

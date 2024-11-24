@@ -3,5 +3,5 @@ export interface IPicture{
     link?: string;
     file?: File;
     fileContentType?: string;
-    cover: boolean;
+    isCover: boolean;
 }
