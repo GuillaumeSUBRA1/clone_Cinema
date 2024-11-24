@@ -1,6 +1,6 @@
 INSERT INTO movie (id, admin, title, gender, producer, release, duration, actors, summary) VALUES
 (1,1,'XMEN', 'Super-héros', 'Bryan Signer', 2000, 104, 'Hugh Jackman, Patrick Stewart, Ian McKellen',
-'Séparé par la force de ses parents, le jeune Erik Magnus Lehnsherr se découvre détranges pouvoirs sous le coup de la colère : il peut contrôler les métaux. Cest un mutant. Soixante ans plus tard, lexistence des mutants est reconnue mais provoque toujours un vif émoi au sein de la population.'),
+'Séparé par la force de ses parents, le jeune Erik Magnus Lehnsherr se découvre détranges pouvoirs sous le coup de la colère : il peut contrôler les métaux. C''est un mutant. Soixante ans plus tard, lexistence des mutants est reconnue mais provoque toujours un vif émoi au sein de la population.'),
 (2,1,'STAR WARS', 'Fantasy, science-fiction', 'Georges Lucas', 1977, 121, 'Mark Hamill, Harrison Ford, Carrie Fisher',
 'Avant de devenir un célèbre chevalier Jedi, et bien avant de se révéler lâme la plus noire de la galaxie, Anakin Skywalker est un jeune esclave sur la planète Tatooine. La Force est déjà puissante en lui et il est un remarquable pilote de Podracer. Le maître Jedi Qui-Gon Jinn le découvre et entrevoit alors son immense potentiel. Pendant ce temps, larmée de droïdes de linsatiable Fédération du Commerce a envahi Naboo dans le cadre dun plan secret des Sith visant à accroître leur pouvoir.'),
 (3,1,'HARRY POTTER', 'Roman Fantasy', 'Chris Columbus', 1997,152,'Daniel Radcliffe, Emma Watson, Rupert Grint',
