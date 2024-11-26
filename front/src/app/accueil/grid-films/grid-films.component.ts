@@ -1,5 +1,5 @@
 import { Component, effect, inject, OnInit } from '@angular/core';
-import { DisplayMovieCard, IMovie } from 'src/app/model/movie.model';
+import { DisplayMovie, DisplayMovieCard } from 'src/app/model/movie.model';
 import { Pagination } from 'src/app/model/request.model';
 import { StatusNotificationEnum } from 'src/app/model/state.model';
 import { MovieService } from 'src/app/services/movie-service.service';
@@ -17,7 +17,7 @@ export class GridFilmsComponent implements OnInit {
   movieService = inject(MovieService);
 
   movies?: Array<DisplayMovieCard>;
-  movie?: IMovie;
+  movie?: DisplayMovie;
   pageRequest: Pagination = { size: 20, page: 0, sort: [] };
 
   constructor() {
