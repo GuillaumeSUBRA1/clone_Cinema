@@ -1,6 +1,6 @@
 import { IPicture } from "./picture.model";
 
-export interface IMovie{
+export interface DisplayMovie {
     id: number;
     adminId: number;
     title: string;
@@ -13,7 +13,7 @@ export interface IMovie{
     release: string;
 }
 
-export interface DisplayMovieCard{
+export interface DisplayMovieCard {
     id: number;
     title: string;
     cover: IPicture;
