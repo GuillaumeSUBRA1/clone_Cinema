@@ -6,6 +6,6 @@ export interface IMenu{
 export const menuList: IMenu[] = [
   { name: 'Accueil', route: 'accueil' }, 
   { name: 'Horaires', route: 'horaires' }, 
-  { name: 'Compte & Réservation', route: 'compte&reservation' },
+  { name: 'Réservation', route: 'reservation' },
   { name: 'Infos', route: 'infos' }
 ];
