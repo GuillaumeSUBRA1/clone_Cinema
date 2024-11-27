@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   route(onglet: number) {
-    this.router.navigate([menuList[onglet]]);
+    this.router.navigate([menuList[onglet].route]);
   }
 
   initIcons() {
