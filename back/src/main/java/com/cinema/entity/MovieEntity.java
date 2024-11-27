@@ -1,5 +1,6 @@
 package com.cinema.entity;
 
+import com.cinema.enumeration.GenderEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -39,7 +40,8 @@ public class MovieEntity implements Serializable {
     String actors;
 
     @Column(nullable = false)
-    String gender;
+    @Enumerated(EnumType.STRING)
+    GenderEnum gender;
 
     @Column(nullable = false)
     String producer;
