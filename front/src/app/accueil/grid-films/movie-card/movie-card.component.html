@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" (click)="displayMovie(movie().id)">
     <div class="image">
         @if(movie().cover.fileContentType && movie().cover.file){
         <img class="img" [src]="'data:'+movie().cover.fileContentType+';base64,'+movie().cover.file" alt="cover">

@@ -1,0 +1,39 @@
+.display {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    .img {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        transition: transform .5s;
+        z-index: 0;
+    }
+
+    .description {
+        padding-left: 2%;
+        padding-right: 2%;
+        width: 100%;
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .separator{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .casting{
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .summary{
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    }
+}

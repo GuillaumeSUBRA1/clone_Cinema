@@ -4,6 +4,7 @@ import { Pagination } from 'src/app/model/request.model';
 import { StatusNotificationEnum } from 'src/app/model/state.model';
 import { MovieService } from 'src/app/services/movie-service.service';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -15,6 +16,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 export class GridFilmsComponent implements OnInit {
 
   movieService = inject(MovieService);
+  router = inject(Router);
 
   movies?: Array<DisplayMovieCard>;
   movie?: DisplayMovie;
@@ -22,7 +24,6 @@ export class GridFilmsComponent implements OnInit {
 
   constructor() {
     this.listenGetMovies();
-    this.listenGetMovie();
   }
 
   ngOnInit(): void {
@@ -38,13 +39,7 @@ export class GridFilmsComponent implements OnInit {
     });
   }
 
-  listenGetMovie() {
-    effect(() => {
-      const state = this.movieService.getMovie();
-      if (state.status === StatusNotificationEnum.OK) {
-        this.movie = state.value!;
-      }
-    });
+  displayMovie(id: number) {
+    this.router.navigate(['display'], { queryParams: { id: id } });
   }
-
 }

@@ -26,10 +26,7 @@ public class MovieController {
     }
 
     @GetMapping("/get-one")
-    public ResponseEntity<MovieRecordDTO> getFilm(@RequestParam("id") String id) {
-        System.out.println("id = " + id);
-        MovieRecordDTO m = movieService.getOne(Long.parseLong(id));
-        System.out.println(m.toString());
-        return ResponseEntity.ok(movieService.getOne(Long.parseLong(id)));
+    public ResponseEntity<MovieRecordDTO> getFilm(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(movieService.getOne(id));
     }
 }

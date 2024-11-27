@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
-import { DisplayMovieCard, IMovie } from '../model/movie.model';
+import { DisplayMovie, DisplayMovieCard } from '../model/movie.model';
 import { State } from '../model/state.model';
 import { environment } from 'src/environments/environment';
 import { createPaginationOption, Page, Pagination } from '../model/request.model';
@@ -14,8 +14,8 @@ export class MovieService {
   private getAllMoviesWritable: WritableSignal<State<Page<DisplayMovieCard>, HttpErrorResponse>> = signal(State.Builder<Page<DisplayMovieCard>, HttpErrorResponse>().forInit());
   getAllMoviesSignal = computed(() => this.getAllMoviesWritable());
 
-  private getMovieSignal: WritableSignal<State<IMovie, HttpErrorResponse>> = signal(State.Builder<IMovie, HttpErrorResponse>().forInit());
-  getMovie = computed(() => this.getMovieSignal());
+  private getMovieWritable: WritableSignal<State<DisplayMovie, HttpErrorResponse>> = signal(State.Builder<DisplayMovie, HttpErrorResponse>().forInit());
+  getMovieSignal = computed(() => this.getMovieWritable());
 
 
   findAll(pageRequest: Pagination) {
@@ -28,12 +28,15 @@ export class MovieService {
   }
 
   findOne(id:number) {
-    const params = new HttpParams();
-    params.set("id", id);
-    return this.http.get<IMovie>( `${environment.API_URL}/movie/get-one`, {params})
+    let params = new HttpParams().set("id", id);
+    return this.http.get<DisplayMovie>( `${environment.API_URL}/movie/get-one`, {params})
       .subscribe({
-        next: s => this.getMovieSignal.set(State.Builder<IMovie, HttpErrorResponse>().forSuccess(s)),
-        error: e => this.getMovieSignal.set(State.Builder<IMovie, HttpErrorResponse>().forError(e))
+        next: s => this.getMovieWritable.set(State.Builder<DisplayMovie, HttpErrorResponse>().forSuccess(s)),
+        error: e => this.getMovieWritable.set(State.Builder<DisplayMovie, HttpErrorResponse>().forError(e))
       });
+  }
+
+  resetFindOne() {
+    this.getMovieWritable.set(State.Builder<DisplayMovie>().forInit());
   }
 }

@@ -1,0 +1,40 @@
+@if(loading){
+<fa-icon icon="circle-notch" class="me-2" animation="spin"></fa-icon>
+}@else {
+<div class="display">
+    <div>
+        @if(cover && cover!.file && cover!.fileContentType){
+        <img class="img" [src]="'data:'+cover!.fileContentType+';base64,'+cover!.file" alt="cover">
+        } @else if(cover!.link) {
+        <img class="img" [src]="cover!.link" alt="cover">
+        } @else{
+        <div>no img</div>
+        }
+    </div>
+    <div class="description">
+        <div class="title">
+            {{movie?.title}}
+        </div>
+        <div class="flex">
+            <div>
+                {{movie?.duration}} min
+            </div>
+            <div class="separator">|</div>
+            <div>{{movie?.release}}</div>
+            <div class="separator">|</div>
+            <div>{{movie?.gender}}</div>
+        </div>
+        <div class="casting">
+            <div>
+                <strong>Réalisateur : </strong> {{movie?.producer}}
+            </div>
+            <div>
+                <strong>Acteurs : </strong> {{movie?.actors}}
+            </div>
+        </div>
+        <div class="summary">
+            {{movie?.summary}}
+        </div>
+    </div>
+</div>
+}

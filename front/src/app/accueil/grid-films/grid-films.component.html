@@ -1,5 +1,5 @@
 <div class="grid">
     @for(m of movies; track m.id){
-    <movie-card [movie]="m"></movie-card>
+    <movie-card [movie]="m" (displayEvent)="displayMovie($event)"></movie-card>
     }
 </div>
