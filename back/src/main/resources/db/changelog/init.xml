@@ -95,9 +95,6 @@
             <column name="seats" type="int">
                 <constraints nullable="false"/>
             </column>
-            <column name="used" type="boolean">
-                <constraints nullable="false" />
-            </column>
         </createTable>
     </changeSet>
 
