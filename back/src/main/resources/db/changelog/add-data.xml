@@ -13,4 +13,7 @@
     <changeSet id="add-pictures" author="guillaumesubra1">
         <sqlFile path="db/changelog/script/add-pictures.sql"/>
     </changeSet>
+    <changeSet id="add-rooms" author="guillaumesubra1">
+        <sqlFile path="db/changelog/script/add-rooms.sql"/>
+    </changeSet>
 </databaseChangeLog>
