@@ -16,7 +16,7 @@
             <column name="name" type="varchar(100)"/>
             <column name="password" type="varchar(20)"/>
             <column name="email" type="varchar(100)">
-                 <constraints unique="true" nullable="true" uniqueConstraintName="admin_email"/>
+                <constraints unique="true" nullable="true" uniqueConstraintName="admin_email"/>
             </column>
             <column name="created" type="timestamp"/>
             <column name="last_modified" type="timestamp"/>
@@ -51,8 +51,10 @@
             </column>
             <column name="producer" type="varchar(50)"/>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="admin" baseTableName="movie" constraintName="fk_movie_admin_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="admin" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="admin" baseTableName="movie" constraintName="fk_movie_admin_id"
+                                 deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="admin"
+                                 validate="true"/>
     </changeSet>
 
     <changeSet id="picture-seq" author="guillaumesubra1">
@@ -65,23 +67,25 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="movie" type="bigint">
-                <constraints  nullable="false" unique="true" />
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="link" type="varchar">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
             <column name="file_content" type="${blobType}">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
             <column name="file_content_type" type="varchar(10)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
             <column name="is_cover" type="boolean">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="picture" constraintName="fk_picture_movie_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movie" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="picture" constraintName="fk_picture_movie_id"
+                                 deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movie"
+                                 validate="true"/>
     </changeSet>
 
     <changeSet id="room" author="guillaumesubra1">
@@ -90,7 +94,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(100)">
-                <constraints nullable="false" unique="true" />
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="seats" type="int">
                 <constraints nullable="false"/>
@@ -109,13 +113,21 @@
             <column name="room" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="start_time" type="timestamp"/>
-            <column name="end_time" type="timestamp"/>
+            <column name="start_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_time" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="session" constraintName="fk_session_movie_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movie" validate="true"/>
-        <addForeignKeyConstraint baseColumnNames="room" baseTableName="session" constraintName="fk_session_room_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="room" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="movie" baseTableName="session" constraintName="fk_session_movie_id"
+                                 deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="movie"
+                                 validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="room" baseTableName="session" constraintName="fk_session_room_id"
+                                 deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="room"
+                                 validate="true"/>
     </changeSet>
 
     <changeSet id="booking" author="guillaumesubra1">
@@ -130,7 +142,9 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="session" baseTableName="booking" constraintName="fk_booking_session_id" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="session" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="session" baseTableName="booking"
+                                 constraintName="fk_booking_session_id" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="session"
+                                 validate="true"/>
     </changeSet>
 </databaseChangeLog>
