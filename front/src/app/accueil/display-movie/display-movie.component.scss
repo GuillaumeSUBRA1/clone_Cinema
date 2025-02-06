@@ -1,9 +1,8 @@
 .display {
-    height: 100%;
     width: 100%;
     display: flex;
 
-    .loader{
+    .loader {
         margin: auto;
     }
 
@@ -15,29 +14,68 @@
         z-index: 0;
     }
 
-    .description {
-        padding-left: 2%;
-        padding-right: 2%;
-        width: 100%;
 
-        .title {
-            font-size: 3rem;
+    .card {
+        margin-left: 20px;
+        width: 60%;
+        border-radius: 15px;
+
+        .title,
+        .casting,
+        .summary {
+            background-color: #484a4b93;
+        }
+
+        .details {
+            height: 100%;
+            width: 100%;
+            height: max-content;
+            margin-bottom: 15px;
+
+            .casting,
+            .summary,
+            .title {
+                border-radius: 15px;
+                padding: 10px;
+                flex: 1 1 auto;
+            }
+
+            .title {
+                text-align: center;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            .casting {
+                display: block;
+                margin-top: 10px;
+            }
+
+            .summary {
+                font-size: 20px;
+                overflow-y: auto;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.planning {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+
+    .seances{
+        margin-left: 10px;
+
+        .horaire{
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px;
+            font-size: 24px;
             font-weight: bold;
-        }
-
-        .separator{
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .casting{
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        .summary{
-            margin-top: 30px;
-            font-size: 20px;
+            background-color: #484a4b93;
         }
     }
 }

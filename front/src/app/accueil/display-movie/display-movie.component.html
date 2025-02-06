@@ -11,29 +11,44 @@
         <div>no img</div>
         }
     </div>
-    <div class="description">
-        <div class="title">
-            {{movie?.title}}
-        </div>
-        <div class="flex">
-            <div>
-                {{movie?.duration}} min
+    <div class="card">
+        <div class="details">
+            <div class="title">
+                {{movie?.title}}
             </div>
-            <div class="separator">|</div>
-            <div>{{movie?.release}}</div>
-            <div class="separator">|</div>
-            <div>{{movie?.gender}}</div>
-        </div>
-        <div class="casting">
-            <div>
-                <strong>Réalisateur : </strong> {{movie?.producer}}
+            <div class="casting">
+                <div><strong>Durée : </strong>{{movie?.duration}} min</div>
+                <div><strong>Sortie : </strong>{{movie?.release}}</div>
+                <div><strong>Genre : </strong>{{movie?.gender}}</div>
+                <div><strong>Réalisateur : </strong> {{movie?.producer}}</div>
+                <div><strong>Acteurs : </strong> {{movie?.actors}}</div>
             </div>
-            <div>
-                <strong>Acteurs : </strong> {{movie?.actors}}
+            <div class="summary">
+                {{movie?.summary}}
             </div>
         </div>
-        <div class="summary">
-            {{movie?.summary}}
-        </div>
+    </div>
+    }
+</div>
+
+<div class="planning">
+    <div>
+        <p-calendar [(ngModel)]="date" [inline]="true" [showWeek]="true" [showWeek]="false" [selectionMode]="'single'"
+            [minDate]="date" />
+    </div>
+    <div class="seances">
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
+        <div class="horaire">8:00</div>
     </div>
 </div>

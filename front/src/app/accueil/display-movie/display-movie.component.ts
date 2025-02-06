@@ -6,11 +6,13 @@ import { DisplayMovie } from 'src/app/model/movie.model';
 import { IPicture } from 'src/app/model/picture.model';
 import { StatusNotificationEnum } from 'src/app/model/state.model';
 import { MovieService } from 'src/app/services/movie-service.service';
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'display-movie',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, CalendarModule, FormsModule],
   templateUrl: './display-movie.component.html',
   styleUrl: './display-movie.component.scss'
 })
@@ -22,6 +24,7 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
   movieId?: number;
   movie?: DisplayMovie;
   cover?: IPicture;
+  date = new Date();
 
   loading = true;
 
