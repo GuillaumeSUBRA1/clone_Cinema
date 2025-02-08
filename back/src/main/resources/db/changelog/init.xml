@@ -119,6 +119,8 @@
             <column name="end_time" type="timestamp">
                 <constraints nullable="false"/>
             </column>
+            <column name="created" type="timestamp"/>
+            <column name="last_modified" type="timestamp"/>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="movie" baseTableName="session" constraintName="fk_session_movie_id"
                                  deferrable="false"
