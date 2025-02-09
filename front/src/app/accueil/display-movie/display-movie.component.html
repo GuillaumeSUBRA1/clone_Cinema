@@ -33,22 +33,16 @@
 
 <div class="planning">
     <div>
-        <p-calendar [(ngModel)]="date" [inline]="true" [showWeek]="true" [showWeek]="false" [selectionMode]="'single'"
-            [minDate]="date" />
+        <p-calendar [(ngModel)]="selectedDate" [inline]="true" [showWeek]="false" [selectionMode]="'single'"
+            [minDate]="today" (onSelect)="filterSessions($event)" />
     </div>
     <div class="seances">
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
-        <div class="horaire">8:00</div>
+        @if(sessionsDay.length>0){
+        @for(s of sessionsDay; track s.id){
+        <div class="horaire">{{s.startTime | date:'HH:mm'}}</div>
+        }
+        } @else {
+        <div class="aucun">Aucune séance !</div>
+        }
     </div>
 </div>
