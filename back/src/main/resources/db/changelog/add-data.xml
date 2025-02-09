@@ -16,4 +16,7 @@
     <changeSet id="add-rooms" author="guillaumesubra1">
         <sqlFile path="db/changelog/script/add-rooms.sql"/>
     </changeSet>
+    <changeSet id="add-sessions" author="guillaumesubra1">
+        <sqlFile path="db/changelog/script/add-sessions.sql"/>
+    </changeSet>
 </databaseChangeLog>
