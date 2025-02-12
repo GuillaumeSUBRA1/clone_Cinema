@@ -11,11 +11,15 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { Session } from 'src/app/model/session.model';
 import { SessionService } from 'src/app/services/session-service.service';
 import { CommonModule } from '@angular/common';
+import { BookingComponent } from "./booking/booking.component";
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'display-movie',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, CalendarModule, FormsModule],
+  imports: [ToastModule, CommonModule, FontAwesomeModule, CalendarModule, FormsModule, BookingComponent],
+  providers: [MessageService],
   templateUrl: './display-movie.component.html',
   styleUrl: './display-movie.component.scss'
 })
@@ -24,10 +28,12 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
   movieService = inject(MovieService);
   sessionService = inject(SessionService);
   activatedRoute = inject(ActivatedRoute);
+  messageService = inject(MessageService);
 
   movieId?: number;
   movie?: DisplayMovie;
   cover?: IPicture;
+  sessionSelected?: Session;
 
   selectedDate = new Date();
   today =  new Date();
@@ -100,5 +106,16 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.movieId = id;
     this.movieService.findOne(id);
+  }
+
+  selectSession(s:Session){
+    this.sessionSelected = s;
+  }
+
+  resetSession(success: boolean){
+    this.sessionSelected = undefined;
+    if(success){
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Reservation enregistrée' });
+    }
   }
 }

@@ -64,7 +64,8 @@
     padding: 10px;
 
     .seances {
-        width: 50%;
+        margin-left: 20px;
+        flex-grow: 1;
 
         .aucun, .horaire{
             font-size: 20px;
@@ -79,11 +80,16 @@
         }
 
         .horaire {
+            cursor: pointer;
             display: inline-block;
             padding: 20px;
             margin: 10px;
             border-radius: 20px;
             background-color: #484a4b93;
+
+            &:hover{
+                background-color: #2E2C2C;
+            }
         }
     }
 }

@@ -1,3 +1,7 @@
+@if(sessionSelected){
+<booking [titre]="movie!.title" [session]="sessionSelected" (cancelEvent)="resetSession($event)"></booking>
+} @else {
+
 <div class="display">
     @if(loading){
     <fa-icon icon="circle-notch" class="loader" animation="spin" size="3x"></fa-icon>
@@ -39,10 +43,14 @@
     <div class="seances">
         @if(sessionsDay.length>0){
         @for(s of sessionsDay; track s.id){
-        <div class="horaire">{{s.startTime | date:'HH:mm'}}</div>
+        <div class="horaire" (click)="selectSession(s)">{{s.startTime | date:'HH:mm'}}</div>
         }
         } @else {
         <div class="aucun">Aucune séance !</div>
         }
     </div>
 </div>
+
+}
+
+<p-toast />
