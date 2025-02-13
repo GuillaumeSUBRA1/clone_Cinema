@@ -1,0 +1,33 @@
+<div class="booking">
+    <div class="session">
+        <div class="titre">{{titre()}}</div>
+        <div class="horaire">{{session().startTime | date:'dd/MM hh:mm'}}</div>
+    </div>
+    <div class="formulaire">
+        <form id="bookForm" (ngSubmit)="book()" [formGroup]="bookForm">
+            <div class="champ">
+                <label for="email">Votre adresse email</label>
+                <input minlength="5" type="email" id="email" [class.is-valid]="bookForm.get('email')?.valid"
+                    [class.is-invalid]="bookForm.get('email')?.dirty && bookForm.get('email')?.invalid"
+                    placeholder="Email" formControlName="email" />
+                @if(bookForm.get('email')?.dirty && bookForm.get('email')?.hasError('required')){
+                <div class="error">L'email est obligatoire</div>
+                }
+            </div>
+            <div class="champ">
+                <label for="seats">Nombre de places</label>
+                <input type="number" id="seats" [class.is-valid]="bookForm.get('seats')?.valid"
+                    [class.is-invalid]="bookForm.get('seats')?.dirty && bookForm.get('seats')?.invalid" placeholder="1"
+                    formControlName="seats" [value]="bookForm.get('seats')" />
+                @if(bookForm.get('seats')?.dirty && bookForm.get('seats')?.hasError('required')){
+                <div class="error">Le nombre de places est obligatoire</div>
+                }
+            </div>
+            <div class="buttons">
+                <p-button (click)="cancel()" [outlined]="true" severity="danger" label="ANNULER"/>
+                <p-button class="confirmer" [outlined]="true" severity="primary" label="CONFIRMER" type="submit"/>
+            </div>
+        </form>
+    </div>
+</div>
+

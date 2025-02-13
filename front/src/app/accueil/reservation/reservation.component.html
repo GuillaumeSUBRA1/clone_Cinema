@@ -1,0 +1,26 @@
+<div class="recherche">
+    <div class="titre">Email de réservation</div>
+    <form class="form" id="bookForm" (keyup.enter)="search()" (ngSubmit)="search()" [formGroup]="emailForm">
+        <input class="email" type="search" [class.is-valid]="emailForm.get('email')?.valid"
+            [class.is-invalid]="emailForm.get('email')?.dirty && emailForm.get('email')?.invalid"
+            placeholder="Saissiez l'email de reservation" formControlName="email" [value]="emailForm.get('email')" />
+    </form>
+</div>
+
+<div class="liste">
+    @for (book of books; track $index) {
+    <div class="card">
+        @if(book.cover.fileContentType && book.cover.fileContent){
+        <img class="img" [src]="'data:'+book.cover.fileContentType+';base64,'+book.cover.fileContent" alt="cover">
+        } @else if(book.cover.link) {
+        <img class="img" [src]="book.cover.link" alt="cover">
+        }
+
+        <div class="session">
+            <div><strong class="titre">{{book.movieTitle}}</strong></div>
+            <div><strong class="titre"></strong>le {{book.session.startTime|date:'dd/MM'}} à {{book.session.startTime|date:'hh:mm'}}</div>
+            <p-button class="cancel" (click)="cancel(book.id)" [outlined]="true" severity="danger" label="ANNULER"/>
+        </div>
+    </div>
+    }
+</div>

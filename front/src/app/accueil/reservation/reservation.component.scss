@@ -1,0 +1,62 @@
+.recherche {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .titre {
+        font-size: 20px;
+    }
+
+    .form {
+        flex-grow: 1;
+
+        .email {
+            width: 100%;
+            margin-left: 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+        }
+    }
+}
+
+.liste {
+    margin: auto;
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+
+    .card {
+        background: #484a4b93;
+        border-radius: 20px;
+
+        .img {
+            width: 100%;
+            height: 80%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .session{
+            padding: 5px;
+            height: 20%;
+            font-size: 1.2rem;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            margin: auto;
+
+            .titre{
+                font-weight: bold;
+            }
+        }
+
+        .cancel{
+            margin-top: 10px;
+        }
+    }
+}
