@@ -18,8 +18,8 @@ export class SessionService {
         console.log(`${environment.API_URL}/session/by-movie`);
         return this.http.get<Session[]>( `${environment.API_URL}/session/by-movie`, {params})
           .subscribe({
-            next: s => {console.log("test 1");this.getSessionsByMovieWritable.set(State.Builder<Session[], HttpErrorResponse>().forSuccess(s));},
-            error: e => {console.log("test 2");this.getSessionsByMovieWritable.set(State.Builder<Session[], HttpErrorResponse>().forError(e));}
+            next: s => this.getSessionsByMovieWritable.set(State.Builder<Session[], HttpErrorResponse>().forSuccess(s)),
+            error: e => this.getSessionsByMovieWritable.set(State.Builder<Session[], HttpErrorResponse>().forError(e))
           });
     }    
 }
