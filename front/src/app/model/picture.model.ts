@@ -1,7 +1,7 @@
 export interface IPicture{
     id:number;
     link?: string;
-    file?: File;
+    fileContent?: File;
     fileContentType?: string;
     isCover: boolean;
 }

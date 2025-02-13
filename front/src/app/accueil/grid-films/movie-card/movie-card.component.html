@@ -1,7 +1,7 @@
 <div class="container" (click)="displayMovie(movie().id)">
     <div class="image">
-        @if(movie().cover.fileContentType && movie().cover.file){
-        <img class="img" [src]="'data:'+movie().cover.fileContentType+';base64,'+movie().cover.file" alt="cover">
+        @if(movie().cover.fileContentType && movie().cover.fileContent){
+        <img class="img" [src]="'data:'+movie().cover.fileContentType+';base64,'+movie().cover.fileContent" alt="cover">
         } @else if(movie().cover.link) {
         <img class="img" [src]="movie().cover.link" alt="cover">
         }

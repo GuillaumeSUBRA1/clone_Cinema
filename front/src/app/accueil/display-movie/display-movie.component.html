@@ -7,8 +7,8 @@
     <fa-icon icon="circle-notch" class="loader" animation="spin" size="3x"></fa-icon>
     }@else {
     <div>
-        @if(cover && cover!.file && cover!.fileContentType){
-        <img class="img" [src]="'data:'+cover!.fileContentType+';base64,'+cover!.file" alt="cover">
+        @if(cover && cover!.fileContent && cover!.fileContentType){
+        <img class="img" [src]="'data:'+cover!.fileContentType+';base64,'+cover!.fileContent" alt="cover">
         } @else if(cover!.link) {
         <img class="img" [src]="cover!.link" alt="cover">
         } @else{
