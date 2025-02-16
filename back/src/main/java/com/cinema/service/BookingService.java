@@ -53,8 +53,8 @@ public class BookingService {
         for(BookingEntity b : booking){
             SessionEntity session = sessionRepository.findById(b.getSession()).get();
             PictureEntity picture = pictureRepository.findByMovieId(session.getMovie().getId()).get();
-            String title = movieRepository.findById(session.getMovie().getId()).get().getTitle();
-            searchBookingDTOList.add(new SearchBookingDTO(b.getId(),sessionMapper.entityToRecordDTO(session), title, email, b.getSeats(), pictureMapper.entityToDTO(picture)));
+            searchBookingDTOList.add(new SearchBookingDTO(b.getId(),sessionMapper.entityToRecordDTO(session),
+                    email, b.getSeats(), pictureMapper.entityToDTO(picture)));
         }
         return searchBookingDTOList;
     }
