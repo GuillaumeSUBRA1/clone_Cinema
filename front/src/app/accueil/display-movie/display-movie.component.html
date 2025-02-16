@@ -38,7 +38,7 @@
 <div class="planning">
     <div>
         <p-calendar [(ngModel)]="selectedDate" [inline]="true" [showWeek]="false" [selectionMode]="'single'"
-            [minDate]="today" (onSelect)="filterSessions($event)" />
+            (onSelect)="filterSessions($event)" [minDate]="minDate" [maxDate]="maxDate" showIcon="true"/>
     </div>
     <div class="seances">
         @if(sessionsDay.length>0){

@@ -36,7 +36,8 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
   sessionSelected?: Session;
 
   selectedDate = new Date();
-  today =  new Date();
+  minDate?: Date;
+  maxDate?: Date;
 
   sessions: Array<Session> = [];
   sessionsDay: Array<Session> = [];
@@ -87,6 +88,8 @@ export class DisplayMovieComponent implements OnInit, OnDestroy {
         this.sessions = state.value!;
         this.filterSessions(this.selectedDate);
         this.loading = false;
+        this.minDate = new Date(Math.min(...this.sessions.map(s => new Date(s.startTime).getTime())));
+        this.maxDate = new Date(Math.max(...this.sessions.map(s => new Date(s.startTime).getTime())));
       }
     });
   }
