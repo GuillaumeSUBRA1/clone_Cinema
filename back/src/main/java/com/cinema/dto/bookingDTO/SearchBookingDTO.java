@@ -8,7 +8,6 @@ import org.springframework.lang.Nullable;
 public record SearchBookingDTO(
         @NotNull Long id,
     @NotNull SessionRecordDTO session,
-    @NotNull String movieTitle,
     @NotNull String email,
     @NotNull int seats,
     @Nullable PictureRecordDTO cover

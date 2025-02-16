@@ -11,7 +11,6 @@ export interface NewBook {
 export interface SearchBook {
     id: number;
     session: Session;
-    movieTitle: string;
     email?: string;
     seats: number;
     cover: IPicture;
