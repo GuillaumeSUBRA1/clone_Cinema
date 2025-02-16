@@ -16,10 +16,13 @@
         <img class="img" [src]="book.cover.link" alt="cover">
         }
 
+        <div class="menu">
+            <p-button (onClick)="showMenu($event, book, menu)" severity="contrast" icon="pi pi-ellipsis-v" />
+            <p-menu #menu [model]="menuItems" [popup]="true" appendTo="body" />
+        </div>
+
         <div class="session">
-            <div><strong class="titre">{{book.movieTitle}}</strong></div>
-            <div><strong class="titre"></strong>le {{book.session.startTime|date:'dd/MM'}} à {{book.session.startTime|date:'hh:mm'}}</div>
-            <p-button class="cancel" (click)="cancel(book.id)" [outlined]="true" severity="danger" label="ANNULER"/>
+            {{book.session.startTime|date:'dd/MM'}} | {{book.session.startTime|date:'hh:mm'}}
         </div>
     </div>
     }
