@@ -11,8 +11,5 @@ import java.util.List;
 public interface SessionMapper {
 
     @Mapping(target = "movie", source = "movie.id")
-    @Mapping(target = "room", source = "room.id")
     SessionRecordDTO entityToRecordDTO(SessionEntity session);
-
-    List<SessionRecordDTO> entityListToRecordDTOList(List<SessionEntity> session);
 }
