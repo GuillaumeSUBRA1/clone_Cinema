@@ -1,6 +1,6 @@
 export interface Session{
     id: number;
-    movieId : number;
+    movie: number;
     roomId: number;
     startTime: Date;
     endTime: Date;
