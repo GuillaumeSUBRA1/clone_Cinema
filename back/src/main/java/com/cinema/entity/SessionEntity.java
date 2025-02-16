@@ -16,8 +16,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class SessionEntity extends AbstractAuditingEntity<Long> {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sessionGenerator")
+    @SequenceGenerator(name = "sessionGenerator", sequenceName = "session_generator", allocationSize = 1)
     Long id;
 
     @ManyToOne
