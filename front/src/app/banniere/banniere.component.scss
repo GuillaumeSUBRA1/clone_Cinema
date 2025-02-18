@@ -43,18 +43,19 @@
             max-height: 90px;
             bottom: 0;
             text-decoration: none;
-            &:hover{
+
+            &:hover {
                 cursor: pointer;
             }
 
-            .title{
+            .title {
                 height: 100%;
                 font-size: 50px;
                 margin-right: 20px;
                 font-weight: bold;
             }
 
-            .img{
+            .img {
                 align-items: center;
                 size: 5px;
             }
@@ -64,21 +65,24 @@
             margin-left: 16px;
             width: 100%;
             display: flex;
-            justify-content:space-between;
+            justify-content: flex-start;
             align-items: center;
             color: white;
 
-            .menu, .menu-selected {
+            .menu,
+            .menu-selected {
                 cursor: pointer;
                 padding-top: 4px;
                 padding-bottom: 4px;
+                margin-left: 20px;
+                margin-right: 20px;
                 width: max-content;
                 font-size: 20px;
                 font-family: Montserrat, sans-serif;
                 position: relative;
             }
 
-            .menu-selected{
+            .menu-selected {
                 font-weight: bold;
                 text-decoration: underline red 2px !important;
                 text-underline-offset: 5px;

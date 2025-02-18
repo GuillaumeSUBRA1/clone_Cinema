@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   router = inject(Router);
 
   ngOnInit(): void {
-      this.initIcons();
+    this.initIcons();
   }
 
   route(onglet: number) {

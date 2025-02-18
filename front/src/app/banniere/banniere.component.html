@@ -1,10 +1,10 @@
 <div class="banniere">
     <div class="reseau">
         <a href="https://github.com/GuillaumeSUBRA1">
-            <img class="icone" src="/assets/images/logo/github.png"/>
+            <img class="icone" src="/assets/images/logo/github.png" />
         </a>
         <a href="https://www.linkedin.com/in/guillaume-subra-622689139/">
-            <img class="icone" src="/assets/images/logo/linkedin.png"/>
+            <img class="icone" src="/assets/images/logo/linkedin.png" />
         </a>
     </div>
     <div class="content">
@@ -14,9 +14,9 @@
         </a>
         <div class="menus">
             @for (menu of menus; track menu; let i = $index) {
-            <div [ngClass]="{'menu-selected':(i===currentMenu),'menu':(i!==currentMenu)}" (click)="route(i)">{{menu.name}}</div>
+            <div [ngClass]="{'menu-selected':(i === currentMenu), 'menu':(i !== currentMenu)}" (click)="route(i)">
+                {{menu.name}}</div>
             }
-            <i class="pi pi-search" style="font-size: 1.2rem"></i>
         </div>
     </div>
 </div>
