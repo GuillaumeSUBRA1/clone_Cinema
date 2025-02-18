@@ -30,7 +30,7 @@ export class ReservationComponent {
   }
 
   emailForm = this.formBuilder.nonNullable.group<ReservationSearchForm>({
-    email: new FormControl('guillaumesubra1@gmail.com', { nonNullable: true, validators: [Validators.required, Validators.email] })
+    email: new FormControl(null, { nonNullable: true, validators: [Validators.required, Validators.email] })
   });
 
   listenSearch() {
