@@ -7,7 +7,7 @@
     padding-right: 10%;
     padding-top: 2px;
     z-index: 1;
-    background-color: black;
+    backdrop-filter: blur(10px);
 
     .reseau {
         height: 30px;
@@ -53,6 +53,7 @@
                 font-size: 50px;
                 margin-right: 20px;
                 font-weight: bold;
+                color: #FFD700;
             }
 
             .img {
@@ -80,11 +81,12 @@
                 font-size: 20px;
                 font-family: Montserrat, sans-serif;
                 position: relative;
+                color: var(--text-color);
             }
 
             .menu-selected {
                 font-weight: bold;
-                text-decoration: underline red 2px !important;
+                text-decoration: underline var(--text-color) 2px !important;
                 text-underline-offset: 5px;
             }
 
@@ -95,7 +97,7 @@
                 left: 50%;
                 width: 0%;
                 height: 2px;
-                background: red;
+                background: var(--text-color);
                 transition: all 250ms ease-in-out;
             }
 
