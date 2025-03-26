@@ -3,7 +3,7 @@
     <form class="form" id="bookForm" (keyup.enter)="search()" (ngSubmit)="search()" [formGroup]="emailForm">
         <input class="email" type="search" [class.is-valid]="emailForm.get('email')?.valid"
             [class.is-invalid]="emailForm.get('email')?.dirty && emailForm.get('email')?.invalid"
-            placeholder="Saissiez l'email de reservation" formControlName="email" [value]="emailForm.get('email')" />
+            placeholder="Saisissez l'email de reservation" formControlName="email" [value]="emailForm.get('email')" />
     </form>
 </div>
 
