@@ -5,7 +5,7 @@
 @import 'primeflex/primeflex.css';
 
 :root {
-    --text-color: #FFD700;
+    --text-color: white;
 }
 
 html,
@@ -16,6 +16,6 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #191970;
+    background-color: #201f1f;
     color: var(--text-color);
 }
